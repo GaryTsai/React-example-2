@@ -1,0 +1,69 @@
+import React, {Component} from 'react';
+import Comp from './components/comp.js'
+import './style/sample2.css';
+
+
+const components=[{
+    text:'Component ',
+    id:0,
+},{
+    text:'Component ',
+    id:1,
+},{
+    text:'Component ',
+    id:2,
+},{
+    text:'Component ',
+    id:3,
+}];
+
+class App extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            components:components,
+        };
+        this.addComponent = this.addComponent.bind(this);
+        this.removeComponent = this.removeComponent.bind(this);
+    }
+    addComponent(){
+        const newComponent={
+            text:'New Component ',
+            id:this.state.components.length < 0 ? 0:this.state.components.length
+        };
+        console.log(this.state.components.length);
+        this.setState(state => ({
+            components: state.components.concat(newComponent),
+        }));
+    }
+    removeComponent(){
+        if(!this.state.components.length){
+            return
+        }
+
+        this.setState(state => ({
+            components: state.components.slice(0, state.components.length - 1),
+            id: (state.id-1)
+        }));
+    }
+
+    render() {
+        const components = this.state.components;
+        return (
+            <div className="frame-Style" >
+                <div >
+                  <button className="btn-Style" type="button" onClick={this.addComponent}>Add Component</button>
+                  <button className="btn-Style" type="button" onClick={this.removeComponent}>Remove Component</button>
+                </div>
+                <div>
+                    <br/>
+                    <Comp  components ={this.state.components}  />
+
+        
+                </div>
+            </div>
+        );
+    }
+}
+
+export default App;

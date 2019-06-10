@@ -1,0 +1,14 @@
+.Frame-style{
+    text-align:center
+}
+
+.Btn-style {
+    width: 100px;
+}
+
+.Component-style{
+    border-style: dashed;
+    margin: 10px auto;
+    width: 50%;
+    height: 20px;
+}
