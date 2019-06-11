@@ -6,15 +6,25 @@ class Button extends Component {
         const {
             addComponent,
             removeComponent,
-            ...props
+            //remain
+            ...attrs
         } = this.props;
 
         return (
             <div>
-                <button {...props} onClick={addComponent}>Add Component</button>
-                <button {...props}  onClick={removeComponent}>remove Component</button>
+                <button {...attrs}  onClick={addComponent}>Add Component</button>
+                <button {...attrs}  onClick={removeComponent}>remove Component</button>
             </div>
         );
+
+        // return (
+        //     <div>
+        //         <button className={this.props.className}
+        //                 type={this.props.type} onClick={this.props.addComponent}>Add Component</button>
+        //         <button className={this.props.className}
+        //                 type={this.props.type} onClick={this.props.removeComponent}>remove Component</button>
+        //     </div>
+        // );
     }
 }
 

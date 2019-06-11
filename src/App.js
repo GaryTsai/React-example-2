@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Comp from './components/comp.js'
-// import Button from './components/button.js'
+import Button from './components/button.js'
 
 import './style/sample2.css';
 
@@ -56,26 +56,20 @@ class App extends Component {
         }));
     }
 
-    // componentWillUnmount() {
-    //     document.removeEventListener("onclick", this.addComponent);
-    //     document.removeEventListener("onclick", this.removeComponent);
-    //     console.log('~~~execute componentWillUnmount~~~');
-    // }
-
     render() {
         return (
             <div className="Frame-style" >
                 {/*//(1)*/}
-                <div >
-                  <button className="Btn-style" type="button" onClick={this.addComponent}>Add Component</button>
-                  <button className="Btn-style" type="button" onClick={this.removeComponent}>Remove Component</button>
-                </div>
+                {/*<div >*/}
+                {/*  <button className="Btn-style" type="button" onClick={this.addComponent}>Add Component</button>*/}
+                {/*  <button className="Btn-style" type="button" onClick={this.removeComponent}>Remove Component</button>*/}
+                {/*</div>*/}
                 {/*(2)*/}
-                {/*<Button*/}
-                {/*    className="Btn-style"*/}
-                {/*    type="button"*/}
-                {/*    addComponent={this.addComponent} removeComponent={this.removeComponent}*/}
-                {/*/>*/}
+                <Button
+                    className="Btn-style"
+                    type="button"
+                    addComponent={this.addComponent} removeComponent={this.removeComponent}
+                />
                 <div>
                     <br/>
                     {this.state.components.map((component) =>

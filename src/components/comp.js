@@ -5,7 +5,7 @@ class Comp extends Component {
 
     render() {
         return (
-            <div {...this.props}>
+            <div  {...this.props}>
                 {this.props.text}{this.props.id}
             </div>
         );
